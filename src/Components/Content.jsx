@@ -17,19 +17,47 @@ import logo from '../assets/hello.svg'
 import facebook from '../assets/facebook.svg'
 import tiktok from '../assets/tiktok.svg'
 import youtube from '../assets/youtube.svg'
+// carousel images
+import vegan from '../assets/images/vegan.webp';
+import weeklyClassic from '../assets/images/weekly_classic.webp';
+import vegetarian from '../assets/images/Vegetarian.webp';
+import gourmet from '../assets/images/gourmet.webp';
+import chefsChoice from '../assets/images/Chefschoice.webp';
+import familyFriendly from '../assets/images/family_friendly.webp';
+import quickEasy from '../assets/images/quick_easy.webp';
+
+
+// carousel
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 
 
 function Content() {
-    const images = [
-        'src/assets/images/vegan.webp',
-        'src/assets/images/weekly_classic.webp',
-        'src/assets/images/Vegetarian.webp',
-        'src/assets/images/gourmet.webp',
-        'src/assets/images/Chefschoice.webp',
-        'src/assets/images/family_friendly.webp',
-        'src/assets/images/quick_easy.webp'
-    ]
+    
+
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        autoplay: true,
+      };
+      
+
+
+      const images = [
+        { img: vegan, buttonText: 'Vegan', buttonClass: 'btnStyle1' },
+        { img: weeklyClassic, buttonText: 'Weekly Classic', buttonClass: 'btnStyle2' },
+        { img: vegetarian, buttonText: 'Vegetarian', buttonClass: 'btnStyle3' },
+        { img: gourmet, buttonText: 'Gourmet', buttonClass: 'btnStyle4' },
+        { img: chefsChoice, buttonText: 'Chef’s Choice', buttonClass: 'btnStyle5' },
+        { img: familyFriendly, buttonText: 'Family Friendly', buttonClass: 'btnStyle6' },
+        { img: quickEasy, buttonText: 'Quick & Easy', buttonClass: 'btnStyle7' }
+    ];
     return (
         <>
             <div className='sectionOne'>
@@ -138,26 +166,19 @@ function Content() {
                     <p>Choose from 34+ recipes every week - from light, low-calorie dishes to hearty, family <br /> favourites. Look out for our handy recipe tags to make choosing even simpler.</p>
                 </div>
 
-                {/* the carousel */}
-                <div>
-                    <div id="carousel">
-                        <span className='drop'>{'<'}</span>
-                            <div className='imgbtn'>
-                                <img src={images[0]} alt="" />
-                                <NarrowButton text1="Vegan" className="btnStyle1" />
-                            </div>
-                            <div className='imgbtn'>
-                                <img src={images[1]} alt="" />
-                                <NarrowButton text1="Weekly Classic" className="btnStyle2"/>
-                            </div>
-                            <div className='imgbtn'>
-                                <img src={images[2]} alt="" />
-                                <NarrowButton text1="Vegetarian" className="btnStyle3"/>
-                            </div>
 
-                        <span className='drop'>{'>'}</span>
-                    </div>
+                {/* the carousel */}
+                <div className='carousel'>
+                    <Slider {...settings}>
+                        {images.map((image) => (
+                            <div className='imgbtn'>
+                                <img src={image.img} />
+                                <NarrowButton text1={image.buttonText} className={image.buttonClass} />
+                            </div>
+                        ))}
+                    </Slider>
                 </div>
+
                 <WideButton text="View Menu" className="btnstyleot"/>
             </section>
             {/* sectionFive */}

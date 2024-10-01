@@ -185,24 +185,27 @@ button{
 }
 /* the carousel */
 
-#carousel {
-  display: flex; 
-  justify-content: center;
-  align-items: center; 
+
+.carousel {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 8rem;
+  text-align: center; 
+  background-color: #36bd2c;
 }
 
 .imgbtn {
   display: flex;
   flex-direction: column; 
   align-items: center;
-  margin: 0 10px; 
   position: relative;
-  text-wrap: nowrap;
+  padding: 2rem 1rem;
 }
-#carousel .imgbtn img{
-    height: 200px;
-    width: 100%;
-    border-radius: 8px;
+.carousel .imgbtn img{
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
 }
 /* styling carousel buttons */
 .sectionFour .btnStyle1{
@@ -211,15 +214,15 @@ button{
     border-radius: 12px;
     position: absolute;
     width: 80px;
-    bottom: 5px;
-    right: 10px;
+    bottom: 40px;
+    right: 40px;
     color: #7ba742;
 }
 .sectionFour .btnStyle2{
   position: absolute;
-  bottom: 5px;
   border-radius: 12px;
-  right: 5px;
+  bottom: 40px;
+  right: 40px;
   padding: 5px 10px;
   width: 150px;
   background-color: #d9e3fe;
@@ -227,17 +230,58 @@ button{
 }
 .sectionFour .btnStyle3{
   position: absolute;
-  bottom: 5px;
+  bottom: 40px;
   padding: 5px 10px;
-  right: 5px;
+  right: 40px;
   border-radius: 12px;
   width: 110px;
   background-color: #c8f5da;
   color: #5ab47e;
 }
 
+.sectionFour .btnStyle4 {
+  position: absolute;
+  bottom: 40px; 
+  right: 30px;
+  padding: 5px 8px; 
+  border-radius: 12px;
+  width: 110px;
+  font-size: 0.85rem; 
+  background-color: #d7d5df;
+  color: #4b4375;
+}
+.sectionFour .btnStyle5{
+  background-color: #f6bfb7;
+  position: absolute;
+  bottom: 40px; 
+  right: 30px;
+  padding: 5px 8px; 
+  border-radius: 12px;
+  font-size: 0.85rem; 
+  color: #e32a12;
+}
+.sectionFour .btnStyle6{
+  position: absolute;
+  bottom: 40px; 
+  right: 30px;
+  padding: 5px 8px; 
+  border-radius: 12px;
+  font-size: 0.85rem; 
+  background-color: #d0e5f0;
+  color: #539fc5;
+}
+.sectionFour .btnStyle7 {
+  position: absolute;
+  bottom: 40px; 
+  right: 30px;
+  padding: 5px 8px; 
+  border-radius: 12px;
+  font-size: 0.85rem; 
+  background-color: #ffeebf;
+  color: #e42a12;
+}
 .sectionFour .btnstyleot{
-  margin: 50px 520px;
+  margin: 50px 530px;
   padding: 15px 50px;
   border-radius: 25px;
   background-color: #e42e13;
@@ -308,6 +352,7 @@ button{
 }
 .sectionFive .stars p{
   font-weight: 300;
+  gap: 2px;
 }
 .sectionFive .fa-solid{
   color: #f6ad01;
@@ -569,3 +614,4 @@ button{
   color: red;
   font-size: 1.2rem;
 }
+
